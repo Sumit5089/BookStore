@@ -1,9 +1,25 @@
 import React from "react";
 
 const Navbar = () => {
+  const navItems = (
+    <>
+      <li>
+        <a>Home</a>
+      </li>
+      <li>
+        <a>Course</a>
+      </li>
+      <li>
+        <a>Contact</a>
+      </li>
+      <li>
+        <a>About</a>
+      </li>
+    </>
+  );
   return (
     <>
-      <div>
+      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 ">
         <div className="navbar bg-base-100">
           <div className="navbar-start">
             <div className="dropdown">
@@ -31,40 +47,19 @@ const Navbar = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
-               <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Course</a>
-              </li>
-              <li>
-                <a>Contact</a>
-              </li>
-              <li>
-                <a>About</a>
-              </li>
+                {" "}
+                {navItems}
               </ul>
             </div>
             <a className="text-2xl font-bold cursor-pointer">BookStore</a>
           </div>
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Course</a>
-              </li>
-              <li>
-                <a>Contact</a>
-              </li>
-              <li>
-                <a>About</a>
-              </li>
-            </ul>
-          </div>
           <div className="navbar-end">
-            <a className="btn">Button</a>
+            <div className="navbar-center hidden lg:flex">
+              <ul className="menu menu-horizontal px-1">{navItems}</ul>
+            </div>
+            <div>
+              <a className="btn">Login</a>
+            </div>
           </div>
         </div>
       </div>
