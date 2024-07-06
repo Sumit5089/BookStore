@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Login from "./Login";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const Signup = () => {
+function Signup() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -14,7 +17,7 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     const userInfo = {
-      fullname: data.fullname,
+      username: data.username,
       email: data.email,
       password: data.password,
     };
