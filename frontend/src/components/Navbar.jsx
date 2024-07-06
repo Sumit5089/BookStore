@@ -1,39 +1,41 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Login from "./Login";
+import Logout from "./Logout";
+import { useAuth } from "../context/AuthProvider";
 
 const Navbar = () => {
-
-  const [theme, setTheme] = useState(localStorage.getItem('theme')?localStorage.getItem('theme') : 'light');
+  const [authUser, setAuthUser] = useAuth();
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
   const element = document.documentElement;
   useEffect(() => {
-    if(theme === "dark"){
+    if (theme === "dark") {
       element.classList.add("dark");
       localStorage.setItem("theme", "dark");
       document.body.classList.add("dark");
-    }
-    else{
+    } else {
       element.classList.remove("dark");
       localStorage.setItem("theme", "light");
       document.body.classList.remove("dark");
     }
-  },[theme])
+  }, [theme]);
 
-  const [sticky, setsticky]  = useState(false)
+  const [sticky, setsticky] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
-        setsticky(true)
+        setsticky(true);
       } else {
-        setsticky(false)
+        setsticky(false);
       }
-    }
-    window.addEventListener('scroll', handleScroll)
+    };
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-
-  } , [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const navItems = (
     <>
       <li>
@@ -52,10 +54,13 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className={`max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50 ${
-        sticky ? 'sticky-navbar shadow-md bg-base-200 dark:bg-slate-600 dark:text-white duration-300 transition-all ease-in-out' : ''
-      
-      }`}>
+      <div
+        className={`max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50 ${
+          sticky
+            ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-600 dark:text-white duration-300 transition-all ease-in-out"
+            : ""
+        }`}
+      >
         <div className="navbar">
           <div className="navbar-start">
             <div className="dropdown">
@@ -138,12 +143,22 @@ const Navbar = () => {
                 <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
               </svg>
             </label>
-            <div className="pl-3">
-              <a className="btn bg-black text-white px-4 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer" onClick={() =>document.getElementById("my_modal_3").showModal()}>
-                Login
-              </a>
-              <Login />
-            </div>
+
+             {authUser ? (
+              <Logout />
+            ) : (
+              <div className="">
+                <a
+                  className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
+                  onClick={() =>
+                    document.getElementById("my_modal_3").showModal()
+                  }
+                >
+                  Login
+                </a>
+                <Login />
+              </div>
+            )}
           </div>
         </div>
       </div>
