@@ -2,12 +2,14 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import bookroute from './routes/book.route.js';
+import userroute from './routes/user.route.js';
 import cors from 'cors';
 const app = express();
 
+
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +21,7 @@ mongoose.connect(URI).then(() => console.log('Database connected'))
 
 //Routes
 app.use("/book", bookroute);
+app.use("/user", userroute)
 
 app.listen(PORT, () => {    
   console.log(`Server is running on port ${PORT}`);
