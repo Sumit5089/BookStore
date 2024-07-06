@@ -1,18 +1,12 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Baner from './components/Baner';
-import Footer from './components/Footer';
-import { Freebook } from './components/Freebook';
+import Home from './home/Home';
 
-const App = () => {
-  return (
+function App() {
+  return ( 
     <>
-     <Navbar />
-     <Baner/>
-     <Freebook/>
-     <Footer />
+     <Home/>
     </>
-  )
+   );
 }
 
-export default App
+export default App;

@@ -33,7 +33,7 @@ const Baner = () => {
         </div>
         <div className=" order-1 w-full md:w-1/2">
           <img
-            src="/public/book.svg"
+            src="/book.svg"
             className="ml-5 mt-5"
             alt="img"
             style={{ width: "90%", height: "100%" }}
