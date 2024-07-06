@@ -9,10 +9,15 @@ export const signup = async(req, res) =>{
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new User({username, email, password: hashedPassword});
         await newUser.save();
-        res.status(201).json(newUser);
+        res.status(201).json({message:"User created successfully",
+            user :{ _id: newUser._id, username: newUser.username, email: newUser.email}
+        });
     } catch(error){
-        res.status(404).json({message: error.message});
+        if(error.response){
+            console.log(err);
+            alert("Error: " + err.response.data.message);
     }
+};
 }
 
 export const login = async(req, res) =>{
