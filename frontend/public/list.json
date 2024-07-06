@@ -5,7 +5,7 @@
         "title": "The Great Gatsby",
         "price": 10.99,
         "category": "Fiction",
-        "image": "https://example.com/great-gatsby.jpg"
+        "image": "https://img-cdn.hpb.com/normal/9780684801520/0/0/300.jpg"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "title": "To Kill a Mockingbird",
         "price": 9.99,
         "category": "Fiction",
-        "image": "https://example.com/to-kill-a-mockingbird.jpg"
+        "image": "https://img-cdn.hpb.com/normal/9780099549482/3/0/300.jpg"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "title": "1984",
         "price": 12.99,
         "category": "Fiction",
-        "image": "https://example.com/1984.jpg"
+        "image": "https://img-cdn.hpb.com/normal/9780452262935/2/0/300.jpg"
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "title": "Pride and Prejudice",
         "price": 8.99,
         "category": "Fiction",
-        "image": "https://example.com/pride-and-prejudice.jpg"
+        "image": "https://img-cdn.hpb.com/normal/9780030957666/0/0/300.jpg"
     },
     {
         "id": 5,
@@ -37,15 +37,15 @@
         "title": "The Catcher in the Rye",
         "price": 11.99,
         "category": "Fiction",
-        "image": "https://example.com/catcher-in-the-rye.jpg"
+        "image": "https://img-cdn.hpb.com/normal/9781586633592/0/0/300.jpg"
     },
     {
         "id": 6,
         "name": "Story Book",
-        "title": "To Kill a Mockingbird",
+        "title": "Fourth Wing",
         "price": 9.99,
         "category": "Fiction",
-        "image": "https://example.com/to-kill-a-mockingbird.jpg"
+        "image": "https://img-cdn.hpb.com/normal/9781649374042/3/0/300.jpg"
     },
     {
         "id": 7,
@@ -53,7 +53,7 @@
         "title": "The Hobbit",
         "price": 10.99,
         "category": "Fantasy",
-        "image": "https://example.com/the-hobbit.jpg"
+        "image": "https://img-cdn.hpb.com/normal/9780618002214/0/0/300.jpg"
     },
     {
         "id": 8,
@@ -61,6 +61,6 @@
         "title": "Harry Potter and the Sorcerer's Stone",
         "price": 13.99,
         "category": "Fantasy",
-        "image": "https://example.com/harry-potter.jpg"
+        "image": "https://img-cdn.hpb.com/rares/353820281/0/0/300.jpg"
     }
 ]

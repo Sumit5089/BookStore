@@ -34,14 +34,14 @@ const Baner = () => {
         <div className=" order-1 w-full md:w-1/2">
           <img
             src="/public/book.svg"
-            className="ml-5"
+            className="ml-5 mt-5"
             alt="img"
             style={{ width: "90%", height: "100%" }}
           />
         </div>
       </div>
       <br />
-      <hr />
+      
     </>
   );
 };
