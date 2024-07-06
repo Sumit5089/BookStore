@@ -4,9 +4,9 @@ const Baner = () => {
   return (
     <>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2 mt-12 md:mt-33">
+        <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-40">
           <div className="space-y-10">
-            <h1 className="text-4xl font-bold text-center  tracking-tighter">
+            <h1 className="text-4xl font-bold text-center  tracking-tighter mt-3">
               "Discover Your Next Favorite Book at{" "}
               <span className="text-pink-500">Our Store!"</span>
             </h1>
@@ -31,14 +31,17 @@ const Baner = () => {
           </div>
           <button className="btn btn-active btn-secondary px-2 mt-4">Secondary</button>
         </div>
-        <div className="w-full md:w-1/2">
+        <div className=" order-1 w-full md:w-1/2">
           <img
             src="/public/book.svg"
+            className="ml-5"
             alt="img"
-            style={{ width: "90%", height: "90%" }}
+            style={{ width: "90%", height: "100%" }}
           />
         </div>
       </div>
+      <br />
+      <hr />
     </>
   );
 };
